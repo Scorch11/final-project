@@ -62,3 +62,48 @@ UsersHashtags("NAU")
 tweetDataFrame = pd.DataFrame(tweetinfo)
 tweetDataFrame.head()
 StackedBar()
+
+
+
+#this next secion is all my code for the graph and what not.
+import random
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+#data = pd.read_table('finaldata1.0.py', delimiter='\t')
+#df = pd.read_csv("finaldata1.0.csv")
+#df = pd.DataFrame(data)
+#print(df[['school', 'hashtags']])
+def getData(fileName):
+    dataFile = open(fileName, 'r')
+    name = []
+    school = []
+    hashtags = []
+   # for line in infile:
+    #    name, school, hashtags = line.split(",")
+    dataFile.readline() #discard header
+    for line in dataFile:
+        d, m = line.split(',')
+        school.append(float(d))
+        hashtag.append(float(m))
+    dataFile.close()
+    return (CarbonDioxide, Year)
+    
+def labelPlot():
+    plt.title('data')
+    plt.ylabel("school")
+    plt.xlabel("hashtags")
+    plt.zlabel("name")
+    
+
+def plotData(fileName):
+    xVals, yVals = getData(fileName)
+    xVals = np.array(xVals)
+    yVals = np.array(yVals)
+ 
+    plt.plot(yVals, xVals, 'bo',
+               label = 'Measured displacements')
+    labelPlot()
+    plt.show()
+    
+plotData('finaldata1.0.csv')
