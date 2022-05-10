@@ -1,3 +1,5 @@
+pip install tweepy
+
 from tweepy import OAuthHandler
 from tweepy import API
 import pandas as pd
